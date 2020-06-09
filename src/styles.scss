@@ -1,0 +1,42 @@
+// minimal reset
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  .container {
+    width: 1140px;
+
+    @media (max-width: 1200px) {
+      width: 960px;
+    }
+
+    @media (max-width: 992px) {
+      width: 720px;
+    }
+
+    @media (max-width: 768px) {
+      width: 576px;
+    }
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+
+  .container-fluid {
+    width: 100%;
+  }
+
+  .container, .container-fluid {
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
