@@ -1,0 +1,114 @@
+@mixin hover-border($color, $mb, $hw, $vw, $lineWidth) {
+  &:hover {
+    .top,
+    .left,
+    .right,
+    .bottom {
+      opacity: 1;
+    }
+
+    .left, .right {
+      animation-name: vertical;
+    }
+
+    .top, .bottom {
+      animation-name: horizontal;
+    }
+  }
+
+  .top, .left, .right, .bottom {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    background-color: $color;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+  }
+
+  .top, .left, {
+    top: 0;
+  }
+
+  .right, .bottom {
+    bottom: $mb;
+  }
+
+  .left, .right {
+    width: $lineWidth;
+    height: $vw;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .top, .bottom {
+    width: $hw;
+    height: $lineWidth;
+  }
+
+  .top {
+    left: 0;
+  }
+
+  .bottom {
+    right: 0;
+  }
+
+  @keyframes vertical {
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: $vw !important;
+    }
+  }
+
+  @keyframes horizontal {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: $hw !important;
+    }
+  }
+}
+
+@mixin hover-list-item($underscoreColor) {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    transition: 0.2s;
+    background-color: $underscoreColor;
+    height: 2px;
+  }
+
+  &:hover {
+
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}

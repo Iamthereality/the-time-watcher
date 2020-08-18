@@ -1,0 +1,120 @@
+@import "../../../../../styles";
+
+.sign-in-form {
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+
+  .form__header {
+    width: 100%;
+    user-select: none;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5em;
+      margin: 1.5rem 0;
+    }
+
+    p {
+      color: darken($purple, 20%);
+      line-height: 1.7em;
+      font-size: 1.6em;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .form_inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      position: relative;
+      margin: 0 0 1.5em 0;
+      display: block;
+
+      input {
+        width: calc(100% - 2em);
+        height: 1.8em;
+        border-radius: 0;
+        padding: 5px 1em;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.05);
+        transition: all ease-in-out 0.1s;
+        font-size: 1.2em;
+        color: $typoBlack;
+
+        &:focus, &:hover {
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      input:focus {
+         ~ .top,
+         ~ .left,
+         ~ .right,
+         ~ .bottom {
+          opacity: 1;
+        }
+      }
+
+      @include hover-border($purple, 0, 150px, (44.55px/2), 1px);
+    }
+  }
+
+  .form__buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      width: 170px;
+      padding: 10px 2.5em;
+      margin-bottom: 1em;
+      background-color: rgba(0, 0, 0, 0.03);
+      transition: all ease-in-out 0.1s;
+      font-size: 1.2em;
+      color: $typoBlack;
+
+      &:disabled {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &:hover:disabled {
+        cursor: default;
+      }
+
+      &:hover:enabled {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        color: $typoBlack;
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        @include hover-border($purple, 0, 70px, (44.55px / 2), 1px);
+      }
+    }
+  }
+}

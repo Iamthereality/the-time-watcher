@@ -1,0 +1,97 @@
+@import "~src/scss/variables";
+@import "~src/scss/mixins";
+
+header {
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: $headerHeight;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  background-color: #fff;
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .logo {
+        font-size: 1.3em;
+        cursor: pointer;
+        padding-right: 60px;
+        outline: none;
+        font-weight: 400;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+          @include hover-list-item($purple);
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .settings {
+      position: relative;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: 0.2s;
+
+      .burger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .bar {
+          width: 30px;
+          height: 2px;
+          background-color: $purple;
+          border-radius: 2px;
+          margin-bottom: 5px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $bgGray;
+
+        &:active {
+          background-color: darken($bgGray, 5%);
+        }
+      }
+    }
+  }
+}
+
+
