@@ -7,10 +7,9 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { SideBarComponent } from './core/components/side-bar/side-bar.component';
 import { SignInComponent } from './modules/auth/components/sign-in/sign-in.component';
 import { LayoutComponent } from './core/components/layout/layout.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './modules/auth/components/sign-up/sign-up.component';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { TimesheetsModule } from "./modules/timesheets/timesheets.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { TimesheetsModule } from "./modules/timesheets/timesheets.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TimesheetsModule,
     FormsModule,
     BrowserAnimationsModule
   ],

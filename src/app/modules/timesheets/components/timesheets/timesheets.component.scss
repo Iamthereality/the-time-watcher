@@ -1,0 +1,80 @@
+@import "~src/scss/variables";
+
+$borderRadius: 8px;
+$border: 1px solid #F2F2F2;
+
+.timesheets__container {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .timesheets__list {
+    padding: 20px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 260px;
+    height: calc(100% + 40px);
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .timesheets__list_week-selector {
+      margin: 0 0 20px 0;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .prev, .calendar, .next {
+        height: 100%;
+        width: 33%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s;
+
+        &:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .calendar {
+        border-top: $border;
+        border-bottom: $border;
+      }
+
+      .prev, .next {
+        font-size: 1.5em;
+        border: $border;
+
+        &:hover {
+          color: $purple;
+        }
+      }
+
+      .prev {
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+      }
+
+      .next {
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+      }
+    }
+  }
+}
