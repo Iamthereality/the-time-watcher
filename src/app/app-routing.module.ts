@@ -7,6 +7,7 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { TimesheetsModule } from './modules/timesheets/timesheets.module';
 import { AuthGuard } from './modules/auth/guards/auth.guard/auth.guard';
 import { ProjectsModule } from './modules/projects/projects.module';
+import { HomeModule } from './modules/home/home.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     children: [
+      {
+        path: 'home',
+        loadChildren: () => HomeModule
+      },
       {
         path: 'timesheets',
         loadChildren: () => TimesheetsModule

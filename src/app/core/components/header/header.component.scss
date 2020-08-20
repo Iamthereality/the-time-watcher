@@ -54,6 +54,19 @@ header {
           &:last-child {
             margin-right: 0;
           }
+
+          .active {
+            &:after {
+              content: '';
+              width: 100%;
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              transition: all 0.3s;
+              background-color: $purple;
+              height: 2px;
+            }
+          }
         }
       }
     }

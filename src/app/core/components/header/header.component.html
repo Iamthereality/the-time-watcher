@@ -1,12 +1,12 @@
 <header>
   <div class="container">
     <div class="menu">
-      <div class="logo" routerLink="/">The Time Watcher</div>
+      <div class="logo" routerLink="/home">The Time Watcher</div>
       <ng-container *ngIf="window.width > 767">
         <ul>
-          <li><a routerLink="/timesheets">Timesheets</a></li>
-          <li><a routerLink="/projects">Projects</a></li>
-          <li><a routerLink="/reports">Reports</a></li>
+          <li><a routerLink="/timesheets" routerLinkActive="active">Timesheets</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+          <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
         </ul>
       </ng-container>
     </div>
