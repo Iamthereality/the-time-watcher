@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SideBarService } from "../../services/side-bar.service/side-bar.service";
+import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
+import { SideBarService } from '../../services/side-bar.service/side-bar.service';
 import { trigger, style, transition, animate } from '@angular/animations';
-import { WindowSizes } from "../../../shared/interfaces/window-sizes.interface/window-sizes";
-import { SubscriptionLike } from "rxjs";
-import { ResizeService } from "../../../shared/services/resize.service/resize.service";
+import { WindowDimensions } from '../../../shared/interfaces/window-sizes.interface/window-dimensions';
+import { SubscriptionLike } from 'rxjs';
+import { ResizeService } from '../../../shared/services/resize.service/resize.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -31,7 +31,7 @@ import { ResizeService } from "../../../shared/services/resize.service/resize.se
   ]
 })
 export class SideBarComponent implements OnInit, OnDestroy {
-  public window: WindowSizes = {
+  public window: WindowDimensions = {
     width: 0,
     height: 0
   };
@@ -48,13 +48,19 @@ export class SideBarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.resizeSub = this.resizeService.windowSizes
-      .subscribe((window: WindowSizes) => this.window = window);
+      .subscribe((window: WindowDimensions) => this.window = window);
     this.sideBarStateSub = this.sideBarService.sideBarState
       .subscribe((sidebarState: boolean) => this.sideBarState = sidebarState);
   }
 
   public closeSideBar() {
     this.sideBarService.toggleSideBarState(false);
+  }
+
+  @HostListener('click', ['$event']) private closeSideBarByMenuLinkOpening(event) {
+    if (event.target.nodeName === 'A') {
+      this.closeSideBar();
+    }
   }
 
   ngOnDestroy() {

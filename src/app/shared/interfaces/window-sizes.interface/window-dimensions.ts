@@ -1,4 +1,4 @@
-export interface WindowSizes {
+export interface WindowDimensions {
   width: number;
   height: number;
 }

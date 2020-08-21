@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { NgForm } from "@angular/forms";
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {}
 
   public signIn() {
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/sign-in']);
   }
 
   public signUp(form: NgForm) {

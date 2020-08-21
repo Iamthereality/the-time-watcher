@@ -21,7 +21,7 @@
   width: 270px;
   height: calc(100% - 30px);
   right: 0;
-  background-color: #fff;
+  background-color: $WHITE_COLOR;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   -webkit-font-smoothing: antialiased;
 
@@ -46,7 +46,7 @@
         left: 50%;
         width: 30px;
         height: 2px;
-        background-color: $purple;
+        background-color: $MAIN_COLOR;
         border-radius: 1px;
         transform-origin: 0 0;
 
@@ -60,11 +60,10 @@
       }
 
       &:hover {
-        background-color: darken($bgGray, 5%);
-
+        background-color: $BACKGROUND_COLOR;
 
         &:active {
-          background-color: darken($bgGray, 10%);
+          background-color: darken($BACKGROUND_COLOR, 5%);
         }
       }
     }
@@ -90,10 +89,23 @@
       li {
         font-size: 1.1em;
         margin: 0 0 15px 0;
-        @include hover-list-item($purple);
+        @include hover-list-item($MAIN_COLOR);
 
         &:last-child {
           margin-bottom: 0;
+        }
+
+        .active {
+          &:after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: all 0.3s;
+            background-color: $MAIN_COLOR;
+            height: 2px;
+          }
         }
       }
     }

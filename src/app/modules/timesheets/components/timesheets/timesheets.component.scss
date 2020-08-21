@@ -1,7 +1,7 @@
 @import "~src/scss/variables";
 
 $borderRadius: 8px;
-$border: 2px solid #F2F2F2;
+$border: 2px solid $GRAY_COLOR;
 
 .timesheets__container {
   position: relative;
@@ -20,7 +20,7 @@ $border: 2px solid #F2F2F2;
     left: -20px;
     width: 300px;
     height: calc(100% + 40px);
-    background-color: #fff;
+    background-color: $WHITE_COLOR;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ $border: 2px solid #F2F2F2;
         border: $border;
 
         &:hover {
-          color: $purple;
+          color: $MAIN_COLOR;
         }
       }
 
@@ -104,7 +104,7 @@ $border: 2px solid #F2F2F2;
       z-index: 0;
 
       li {
-        background-color: #fff;
+        background-color: $WHITE_COLOR;
         border-top: $border;
         font-size: 1.4em;
         width: 130%;

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SideBarService } from "../../services/side-bar.service/side-bar.service";
-import { SubscriptionLike } from "rxjs";
-import { ResizeService } from "../../../shared/services/resize.service/resize.service";
-import { WindowSizes } from "../../../shared/interfaces/window-sizes.interface/window-sizes";
+import { SideBarService } from '../../services/side-bar.service/side-bar.service';
+import { SubscriptionLike } from 'rxjs';
+import { ResizeService } from '../../../shared/services/resize.service/resize.service';
+import { WindowDimensions } from '../../../shared/interfaces/window-sizes.interface/window-dimensions';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { WindowSizes } from "../../../shared/interfaces/window-sizes.interface/w
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  public window: WindowSizes = {
+  public window: WindowDimensions = {
     width: 0,
     height: 0
   };
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.windowSizesSubscription = this.resizeService.windowSizes
-      .subscribe((windowSizes: WindowSizes) => this.window = windowSizes);
+      .subscribe((windowSizes: WindowDimensions) => this.window = windowSizes);
   }
 
   public openSideBar() {

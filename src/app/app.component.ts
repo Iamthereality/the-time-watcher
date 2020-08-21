@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
-import { ResizeService } from "./shared/services/resize.service/resize.service";
+import { ResizeService } from './shared/services/resize.service/resize.service';
 
 @Component({
   selector: 'app-root',
