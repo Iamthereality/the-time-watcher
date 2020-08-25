@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SideBarService } from '../../services/side-bar.service/side-bar.service';
 import { SubscriptionLike } from 'rxjs';
 import { ResizeService } from '../../../shared/services/resize.service/resize.service';
-import { WindowDimensions } from '../../../shared/interfaces/window-sizes.interface/window-dimensions';
+import { WindowDimensions } from '../../../shared/interfaces/window-dimensions.interface/window-dimensions';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     width: 0,
     height: 0
   };
-  private windowSizesSubscription: SubscriptionLike;
+  private resizeSub: SubscriptionLike;
 
   constructor(
     private sideBarService: SideBarService,
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.windowSizesSubscription = this.resizeService.windowSizes
+    this.resizeSub = this.resizeService.windowSizes
       .subscribe((windowSizes: WindowDimensions) => this.window = windowSizes);
   }
 
@@ -31,6 +31,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.windowSizesSubscription.unsubscribe();
+    if (this.resizeSub) {
+      this.resizeSub.unsubscribe();
+    }
   }
 }

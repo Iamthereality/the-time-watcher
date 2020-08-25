@@ -8,6 +8,9 @@ import { TimesheetsModule } from './modules/timesheets/timesheets.module';
 import { AuthGuard } from './modules/auth/guards/auth.guard/auth.guard';
 import { ProjectsModule } from './modules/projects/projects.module';
 import { HomeModule } from './modules/home/home.module';
+import { ProfileSettingsModule } from './modules/profile-settings/profile-settings.module';
+import { AdministrationModule } from './modules/administration/administration.module';
+import { GeneralSettingsModule } from './modules/general-settings/general-settings.module';
 
 const routes: Routes = [
   {
@@ -37,6 +40,18 @@ const routes: Routes = [
       {
         path: 'reports',
         loadChildren: () => ReportsModule
+      },
+      {
+        path: 'administration',
+        loadChildren: () => AdministrationModule
+      },
+      {
+        path: 'profile-settings',
+        loadChildren: () => ProfileSettingsModule
+      },
+      {
+        path: 'general-settings',
+        loadChildren: () => GeneralSettingsModule
       }
     ],
     component: LayoutComponent

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { WindowDimensions } from '../../interfaces/window-sizes.interface/window-dimensions';
+import { WindowDimensions } from '../../interfaces/window-dimensions.interface/window-dimensions';
 
 @Injectable({
   providedIn: 'root'

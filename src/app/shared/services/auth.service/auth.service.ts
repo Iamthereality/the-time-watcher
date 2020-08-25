@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import AuthResponse from '../../../core/interfaces/auth-response.interface/auth-response';
+import { AuthResponse } from "../../../modules/auth/interfaces/auth-response.interface/auth-response";
 
 
 @Injectable({

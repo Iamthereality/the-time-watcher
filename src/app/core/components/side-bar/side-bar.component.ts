@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
 import { SideBarService } from '../../services/side-bar.service/side-bar.service';
 import { trigger, style, transition, animate } from '@angular/animations';
-import { WindowDimensions } from '../../../shared/interfaces/window-sizes.interface/window-dimensions';
+import { WindowDimensions } from '../../../shared/interfaces/window-dimensions.interface/window-dimensions';
 import { SubscriptionLike } from 'rxjs';
 import { ResizeService } from '../../../shared/services/resize.service/resize.service';
 
@@ -64,7 +64,11 @@ export class SideBarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.resizeSub.unsubscribe();
-    this.sideBarStateSub.unsubscribe();
+    if (this.resizeSub) {
+      this.resizeSub.unsubscribe();
+    }
+    if (this.sideBarStateSub) {
+      this.sideBarStateSub.unsubscribe();
+    }
   }
 }

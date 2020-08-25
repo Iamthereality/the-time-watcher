@@ -15,6 +15,12 @@
     </div>
   </div>
   <div class="side-bar__content">
+    <div class="side-bar__content_user">
+      <div class="side-bar__content_avatar">
+        <img src="https://sun9-72.userapi.com/c629420/v629420555/370cd/5M7baUnYOgM.jpg" alt="avatar">
+      </div>
+      <h2>Nikolay Lysenko</h2>
+    </div>
     <ng-container *ngIf="window.width < 768">
       <h2>Menu</h2>
       <ul>
@@ -25,9 +31,9 @@
     </ng-container>
     <h2>Settings</h2>
     <ul>
-      <li><a routerLink="/profile-settings" routerLinkActive="active">My profile</a></li>
-      <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-      <li><a routerLink="/general-settings" routerLinkActive="active">General</a></li>
+      <li><a routerLink="/profile-settings" routerLinkActive="active">Profile settings</a></li>
+      <li><a routerLink="/general-settings" routerLinkActive="active">General settings</a></li>
+      <li><a routerLink="/administration" routerLinkActive="active">Administration</a></li>
       <li><a routerLink="/sign-out" routerLinkActive="active">Sign out</a></li>
     </ul>
   </div>
