@@ -1,0 +1,56 @@
+@import "~src/scss/variables";
+
+$border: 2px solid $GRAY_COLOR;
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.day-selector {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+
+  li {
+    background-color: $WHITE_COLOR;
+    border-top: $border;
+    font-size: 1.4em;
+    width: 130%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc((100% - 12px) / 7);
+    min-height: 23px;
+    transition: all ease-in-out 0.3s;
+    transform: translateX(-23%);
+    cursor: pointer;
+    user-select: none;
+
+    div {
+      width: calc(260px - 40px);
+      padding: 0 40px;
+      text-align: center;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:hover {
+      transform: translateX(0);
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      &:active {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TimesheetsComponent } from './components/timesheets/timesheets.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: TimesheetsComponent
+    component: LayoutComponent
   }
 ];
 

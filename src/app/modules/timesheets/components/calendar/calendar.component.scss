@@ -1,0 +1,73 @@
+@import "~src/scss/variables";
+
+$borderRadius: 8px;
+$border: 2px solid $GRAY_COLOR;
+
+.calendar {
+  padding: 20px;
+  height: 50px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .prev, .date-picker, .next {
+    height: 100%;
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      &:active {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .date-picker {
+    border-top: $border;
+    border-bottom: $border;
+
+    img {
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  .prev, .next {
+    font-size: 1.5em;
+    border: $border;
+
+    &:hover {
+      color: $MAIN_COLOR;
+    }
+  }
+
+  .prev {
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+  }
+
+  .next {
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+  }
+}
+
+.date-range {
+  text-align: center;
+  width: calc(100% - 40px);
+  padding: 20px;
+  font: {
+    size: 1.2em;
+  };
+  border-bottom: $border;
+}

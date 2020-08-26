@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimesheetsComponent } from './components/timesheets/timesheets.component';
+import { LayoutComponent } from './components/layout/layout.component';
 import { TimesheetsRoutingModule } from './timesheets-routing.module';
-import { DailyTimeSheetsComponent } from './components/daily-time-sheets/daily-time-sheets.component';
+import { DailyTimesheetComponent } from './components/daily-timesheet/daily-timesheet.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { DaySelectorComponent } from './components/day-selector/day-selector.component';
 
 
 
 @NgModule({
-  declarations: [TimesheetsComponent, DailyTimeSheetsComponent],
+  declarations: [LayoutComponent, DailyTimesheetComponent, CalendarComponent, DaySelectorComponent],
   imports: [
     CommonModule,
     TimesheetsRoutingModule

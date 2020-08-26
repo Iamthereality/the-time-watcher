@@ -4,6 +4,22 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {}
+
+  ::-webkit-scrollbar-thumb {
+    background: $GRAY_COLOR;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($GRAY_COLOR, 10%);
+  }
 }
 
 html, body {
@@ -14,7 +30,7 @@ html, body {
 
 body {
   font-size: 16px;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100vh;
   background: {
     image: url("~src/assets/img/background.png");

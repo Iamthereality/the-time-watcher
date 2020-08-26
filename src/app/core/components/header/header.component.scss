@@ -31,11 +31,16 @@ header {
       justify-content: center;
 
       .logo {
+        width: 285px;
         font-size: 1.3em;
         cursor: pointer;
-        padding-right: 60px;
+        text-align: center;
         outline: none;
         font-weight: 400;
+
+        @media (max-width: 425px) {
+          width: inherit;
+        }
       }
 
       ul {
