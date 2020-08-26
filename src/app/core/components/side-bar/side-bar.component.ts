@@ -4,31 +4,13 @@ import { trigger, style, transition, animate } from '@angular/animations';
 import { WindowDimensions } from '../../../shared/interfaces/window-dimensions.interface/window-dimensions';
 import { SubscriptionLike } from 'rxjs';
 import { ResizeService } from '../../../shared/services/resize.service/resize.service';
+import { SlideLeft} from '../../../shared/animations/slide-animations';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
-  animations: [
-    trigger('slide', [
-      transition(':enter', [
-        style({
-          transformOrigin: '0 0',
-          transform: 'translate(100%, 0)',
-        }),
-        animate('300ms cubic-bezier(0.77, 0.2, 0.05, 1.0)', style({
-          transformOrigin: '0 0',
-          transform: 'translate(0, 0)',
-        }))
-      ]),
-      transition(':leave', [
-        animate('300ms cubic-bezier(0.77, 0.2, 0.05, 1.0)', style({
-          transformOrigin: '100% 0',
-          transform: 'translate(100%, 0)'
-        }))
-      ])
-    ])
-  ]
+  animations: [SlideLeft]
 })
 export class SideBarComponent implements OnInit, OnDestroy {
   public window: WindowDimensions = {
