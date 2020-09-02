@@ -25,6 +25,7 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
       {
         path: 'home',
         loadChildren: () => HomeModule
@@ -54,11 +55,12 @@ const routes: Routes = [
         loadChildren: () => GeneralSettingsModule
       }
     ],
-    component: LayoutComponent
+    component: LayoutComponent,
   },
   {
     path: '**',
-    component: SignInComponent
+    pathMatch: 'full',
+    redirectTo: '',
   }
 ];
 

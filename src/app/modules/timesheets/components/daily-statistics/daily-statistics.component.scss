@@ -5,16 +5,10 @@
   width: calc(100% - 40px);
   height: calc(100% - 40px);
   background-color: $WHITE_COLOR;
-  margin-right: 20px;
-  overflow-y: scroll;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 
   &:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-
-  @media (max-width: 1200px) {
-    margin: 0 0 20px 0;
   }
 }
