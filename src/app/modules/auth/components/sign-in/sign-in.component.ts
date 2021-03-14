@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {}
 
@@ -19,6 +22,6 @@ export class SignInComponent implements OnInit {
   }
 
   public signUp() {
-    this.router.navigate(['/sign-up']);
+    this.router.navigate(['../sign-up'], { relativeTo: this.route }).then();
   }
 }

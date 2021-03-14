@@ -1,9 +1,0 @@
-@import "~src/scss/variables";
-
-$layoutPadding: 20px;
-
-.layout {
-  padding: $layoutPadding;
-  width: calc(100% - #{ $layoutPadding * 2 });
-  height: calc(100% - #{ $HEADER_HEIGHT + $layoutPadding * 2 });
-}

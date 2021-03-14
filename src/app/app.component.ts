@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
-import { ResizeService } from './shared/services/resize.service/resize.service';
+import { ResizeService } from './core/services/resize/resize.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { ResizeService } from './shared/services/resize.service/resize.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  public title = 'TimeWatcherGUI';
+  public title = 'The Time Watcher';
 
   constructor(
     private resizeService: ResizeService
