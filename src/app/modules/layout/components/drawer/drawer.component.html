@@ -1,15 +1,15 @@
 <div
-  *ngIf="sideBarState"
-  (click)="closeSideBar()"
+  *ngIf="drawerService.drawerState$ | async"
+  (click)="drawerService.toggleDrawerState()"
   class="overlay"
 ></div>
 <div
-  *ngIf="sideBarState"
+  *ngIf="drawerService.drawerState$ | async"
   @slideLeft
   class="side-bar"
 >
   <div class="side-bar__header">
-    <div class="side-bar__close" (click)="closeSideBar()">
+    <div class="side-bar__close" (click)="drawerService.toggleDrawerState()">
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
@@ -21,7 +21,7 @@
       </div>
       <h2>Nikolay Lysenko</h2>
     </div>
-    <ng-container *ngIf="window.width < 768">
+    <ng-container *ngIf="resizeService.windowSizes$.value.width < 768">
       <h2>Menu</h2>
       <ul>
         <li><a routerLink="/timesheet" routerLinkActive="active">Timesheet</a></li>

@@ -14,7 +14,7 @@ const routes: Routes = [
     canActivate: [AppGuard],
     loadChildren: () => import('./modules/layout/layout.module').then(m => m.LayoutModule)
   },
-  { path: '**', pathMatch: 'full', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

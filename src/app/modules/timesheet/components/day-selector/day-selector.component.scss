@@ -20,7 +20,7 @@ $border: 2px solid $GRAY_COLOR;
     background-color: $WHITE_COLOR;
     border-top: $border;
     font-size: 1.4em;
-    width: 115%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,7 +28,6 @@ $border: 2px solid $GRAY_COLOR;
     height: calc((100% - 12px) / 7);
     min-height: 23px;
     transition: all ease-in-out 0.3s;
-    transform: translateX(-13%);
     cursor: pointer;
     user-select: none;
 
@@ -47,7 +46,7 @@ $border: 2px solid $GRAY_COLOR;
     }
 
     &:hover {
-      transform: translateX(0);
+      width: calc(100% + 20px);
       position: relative;
       z-index: 3;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

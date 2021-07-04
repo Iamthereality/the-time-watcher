@@ -8,11 +8,10 @@ import { ResizeService } from './core/services/resize/resize.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  public title = 'The Time Watcher';
+  public title;
 
-  constructor(
-    private resizeService: ResizeService
-  ) {
+  constructor(private resizeService: ResizeService) {
+    this.title = 'The Time Watcher';
     this.onResize();
   }
 
@@ -21,5 +20,6 @@ export class AppComponent {
       width: window.innerWidth,
       height: window.innerHeight
     });
+    console.log(this.resizeService.windowSizes$.value);
   }
 }
