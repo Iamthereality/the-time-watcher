@@ -3,6 +3,8 @@
 $layoutPadding: 20px;
 
 .layout {
+  position: relative;
+  z-index: 2;
   padding: $layoutPadding;
   width: calc(100% - #{ $layoutPadding * 2 });
   height: calc(100% - #{ $HEADER_HEIGHT + $layoutPadding * 2 });

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-timesheet.component.scss']
 })
 export class DailyTimesheetComponent implements OnInit {
+  public hours: number[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.hours = [];
+    for (let i = 0; i < 24; i++) {
+      this.hours.push(i);
+    }
   }
-
 }

@@ -15,11 +15,11 @@
     </div>
   </div>
   <div class="side-bar__content">
-    <div class="side-bar__content_user">
+    <div *ngIf='user' class="side-bar__content_user">
       <div class="side-bar__content_avatar">
-        <img src="https://sun9-72.userapi.com/c629420/v629420555/370cd/5M7baUnYOgM.jpg" alt="avatar">
+        <img [src]="user?.imageUrl" alt="">
       </div>
-      <h2>Nikolay Lysenko</h2>
+      <h2>{{user?.name}}</h2>
     </div>
     <ng-container *ngIf="window.width < 768">
       <h2>Menu</h2>
