@@ -15,11 +15,11 @@ import {UserInterface} from "../../../../core/interfaces/user.interface";
 export class DrawerComponent implements OnInit, OnDestroy {
   public user: UserInterface;
 
-  private sub: Subscription;
+  private readonly sub: Subscription;
 
   constructor(
-    public resizeService: ResizeService,
-    public drawerService: DrawerService
+    public readonly resizeService: ResizeService,
+    public readonly drawerService: DrawerService
   ) {
     this.sub = new Subscription();
   }
