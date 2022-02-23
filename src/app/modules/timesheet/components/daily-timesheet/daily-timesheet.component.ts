@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DailyRecordInterface } from "../../../../core/interfaces/daily-record/daily-record.interface";
 
 @Component({
   selector: 'app-daily-timesheet',
@@ -6,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-timesheet.component.scss']
 })
 export class DailyTimesheetComponent implements OnInit {
-  public hours: number[];
+  public dailyRecords: DailyRecordInterface[];
 
-  constructor() {}
-
-  ngOnInit(): void {
-    this.hours = [];
+  constructor() {
+    this.dailyRecords = [];
     for (let i = 0; i < 24; i++) {
-      this.hours.push(i);
+      this.dailyRecords.push({} as DailyRecordInterface)
     }
   }
+
+  ngOnInit(): void {}
 }

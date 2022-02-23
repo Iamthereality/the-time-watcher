@@ -6,16 +6,16 @@ import { WindowDimensions } from '../../interfaces/window-dimensions/window-dime
   providedIn: 'root'
 })
 export class ResizeService {
-  public windowSizes: BehaviorSubject<WindowDimensions>;
+  public windowSizes$: BehaviorSubject<WindowDimensions>;
 
   constructor() {
-    this.windowSizes = new BehaviorSubject<WindowDimensions>({
+    this.windowSizes$ = new BehaviorSubject<WindowDimensions>({
       width: 0,
       height: 0
     });
   }
 
-  public setWindowSizes({width, height}: WindowDimensions) {
-    this.windowSizes.next({width, height});
+  public setWindowSizes({ width, height }: WindowDimensions) {
+    this.windowSizes$.next({ width, height });
   }
 }

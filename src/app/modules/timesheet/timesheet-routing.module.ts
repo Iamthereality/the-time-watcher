@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from './components/layout/layout.component';
+import { TimesheetComponent } from './components/timesheet/timesheet.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: LayoutComponent
-  }
-];
+const routes: Routes = [{ path: '', component: TimesheetComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TimesheetRoutingModule {
-}
+export class TimesheetRoutingModule {}
