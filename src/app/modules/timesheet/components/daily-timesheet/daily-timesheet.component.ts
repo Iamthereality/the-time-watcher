@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DailyRecordInterface } from "../../../../core/interfaces/daily-record/daily-record.interface";
+import { IDailyRecord } from "@core/interfaces/domain/daily-record/daily-record.interface";
 
 @Component({
   selector: 'app-daily-timesheet',
@@ -7,12 +7,12 @@ import { DailyRecordInterface } from "../../../../core/interfaces/daily-record/d
   styleUrls: ['./daily-timesheet.component.scss']
 })
 export class DailyTimesheetComponent implements OnInit {
-  public dailyRecords: DailyRecordInterface[];
+  public dailyRecords: IDailyRecord[];
 
   constructor() {
     this.dailyRecords = [];
     for (let i = 0; i < 24; i++) {
-      this.dailyRecords.push({} as DailyRecordInterface)
+      this.dailyRecords.push({} as IDailyRecord)
     }
   }
 

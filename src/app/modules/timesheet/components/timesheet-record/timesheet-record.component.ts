@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DailyRecordInterface } from "../../../../core/interfaces/daily-record/daily-record.interface";
+import { IDailyRecord } from "@core/interfaces/domain/daily-record/daily-record.interface";
 
 @Component({
   selector: 'app-timesheet-record',
@@ -7,7 +7,7 @@ import { DailyRecordInterface } from "../../../../core/interfaces/daily-record/d
   styleUrls: ['./timesheet-record.component.scss']
 })
 export class TimesheetRecordComponent implements OnInit {
-  @Input() public record: DailyRecordInterface;
+  @Input() public record: IDailyRecord;
 
   constructor() {}
 

@@ -1,6 +1,6 @@
 @import "~src/scss/variables";
 
-.container {
+:host {
   position: relative;
   z-index: 0;
   display: flex;

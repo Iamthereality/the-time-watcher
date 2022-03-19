@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ResizeService } from './core/services/resize/resize.service';
-import { WindowDimensions } from './core/interfaces/window-dimensions/window-dimensions';
+import { IWindowDimensions } from '@core/interfaces/application/window-dimensions/window-dimensions.interface';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { WindowDimensions } from './core/interfaces/window-dimensions/window-dim
 export class AppComponent implements OnInit {
   public title = 'The Time Watcher';
 
-  private windowSizes: WindowDimensions = {
+  private windowSizes: IWindowDimensions = {
     width: window.innerWidth,
     height: window.innerHeight
   };

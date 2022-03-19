@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DrawerService } from '../../../../core/services/drawer/drawer.service';
 import { SubscriptionLike } from 'rxjs';
 import { ResizeService } from '../../../../core/services/resize/resize.service';
-import { WindowDimensions } from '../../../../core/interfaces/window-dimensions/window-dimensions';
+import { IWindowDimensions } from '@core/interfaces/application/window-dimensions/window-dimensions.interface';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { WindowDimensions } from '../../../../core/interfaces/window-dimensions/
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  public window: WindowDimensions = {
+  public window: IWindowDimensions = {
     width: 0,
     height: 0,
   };
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.resizeSub = this.resizeService.windowSizes$.subscribe(
-      (windowSizes: WindowDimensions) => (this.window = windowSizes)
+      (windowSizes: IWindowDimensions) => (this.window = windowSizes)
     );
   }
 
