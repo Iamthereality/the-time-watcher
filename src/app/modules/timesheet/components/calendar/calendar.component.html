@@ -1,9 +1,9 @@
 <div class="calendar">
   <div class="prev"><</div>
-  <div class="date-picker" (click)="openCalendar()">
+  <button class="date-picker" (click)="openCalendar()">
     <img src="../../../../../assets/icons/calendar.svg" alt="calendar">
-    <input type="date" #calendar hidden>
-  </div>
+  </button>
+  <input name="date" type="date" data-initialized="true" autofocus="autofocus" #calendar>
   <div class="next">></div>
 </div>
 <div class="date-range">{{ dateRange }}</div>

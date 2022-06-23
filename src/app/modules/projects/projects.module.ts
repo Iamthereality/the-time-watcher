@@ -6,6 +6,6 @@ import { TimesheetModule } from '../timesheet/timesheet.module';
 
 @NgModule({
   declarations: [ProjectsComponent],
-  imports: [CommonModule, ProjectsRoutingModule, TimesheetModule],
+  imports: [CommonModule, ProjectsRoutingModule, TimesheetModule]
 })
 export class ProjectsModule {}

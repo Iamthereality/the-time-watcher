@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DrawerService {
-  public drawerState$: BehaviorSubject<boolean>;
+  public drawerState$: Observable<boolean>;
+
+  private _drawerState$: BehaviorSubject<boolean>;
 
   constructor() {
-    this.drawerState$ = new BehaviorSubject<boolean>(false);
+    this._drawerState$ = new BehaviorSubject<boolean>(false);
+    this.drawerState$ = this._drawerState$.asObservable();
   }
 
-  public toggleDrawerState(state?: boolean) {
-    this.drawerState$.next(state ? state : !this.drawerState$.value);
+  public toggleDrawerState() {
+    this._drawerState$.next(!this._drawerState$.value);
   }
 }

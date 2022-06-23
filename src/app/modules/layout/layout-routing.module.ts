@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from "./components/layout/layout.component";
-import { AppGuard } from "../../core/guards/app/app.guard";
+import { LayoutComponent } from './components/layout/layout.component';
+import { AppGuard } from '../../core/guards/app/app.guard';
 
 const routes: Routes = [
   {
@@ -24,15 +24,18 @@ const routes: Routes = [
       },
       {
         path: 'administration',
-        loadChildren: () => import('../administration/administration.module').then(m => m.AdministrationModule)
+        loadChildren: () =>
+          import('../administration/administration.module').then(m => m.AdministrationModule)
       },
       {
         path: 'profile-settings',
-        loadChildren: () => import('../profile-settings/profile-settings.module').then(m => m.ProfileSettingsModule)
+        loadChildren: () =>
+          import('../profile-settings/profile-settings.module').then(m => m.ProfileSettingsModule)
       },
       {
         path: 'general-settings',
-        loadChildren: () => import('../general-settings/general-settings.module').then(m => m.GeneralSettingsModule)
+        loadChildren: () =>
+          import('../general-settings/general-settings.module').then(m => m.GeneralSettingsModule)
       }
     ]
   }

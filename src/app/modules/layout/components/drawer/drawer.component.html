@@ -1,40 +1,39 @@
-<div
-  *ngIf="drawerService.drawerState$ | async"
-  (click)="drawerService.toggleDrawerState()"
-  class="overlay"
-></div>
-<div
-  *ngIf="drawerService.drawerState$ | async"
-  @slideLeft
-  class="side-bar"
->
-  <div class="side-bar__header">
-    <div class="side-bar__close" (click)="drawerService.toggleDrawerState()">
-      <div class="bar"></div>
-      <div class="bar"></div>
+<ng-container *ngIf="drawerState$ | async">
+  <div
+    (click)="toggleDrawerState()"
+    class="overlay"
+  ></div>
+  <div @slideLeft class="side-bar">
+    <div class="side-bar__header">
+      <button class="side-bar__header-close" (click)="toggleDrawerState()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
     </div>
-  </div>
-  <div class="side-bar__content">
-    <div *ngIf='(userService.user$ | async) as user' class="side-bar__content_user">
-      <div class="side-bar__content_avatar">
-        <img [src]="user?.imageUrl" alt="user-img">
-      </div>
-      <h2>{{user?.name}} {{user?.lastName}}</h2>
-    </div>
-    <ng-container *ngIf="resizeService.windowSizes$.value.width < 768">
-      <h2>Menu</h2>
+    <div class="side-bar__content">
+      <ng-container *ngIf='(userService.user$ | async) as user'>
+        <div class="side-bar__content_user">
+          <div class="side-bar__content_avatar">
+            <img [src]="user?.imageUrl" alt="user-img">
+          </div>
+          <h2>{{ user?.name }} {{ user?.lastName }}</h2>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="(windowDimensions$ | async).width < 768">
+        <h2>Menu</h2>
+        <ul>
+          <li><a routerLink="/timesheet" routerLinkActive="active">Timesheet</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+          <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
+        </ul>
+      </ng-container>
+      <h2>Settings</h2>
       <ul>
-        <li><a routerLink="/timesheet" routerLinkActive="active">Timesheet</a></li>
-        <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-        <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
+        <li><a routerLink="/profile-settings" routerLinkActive="active">Profile settings</a></li>
+        <li><a routerLink="/general-settings" routerLinkActive="active">General settings</a></li>
+        <li><a routerLink="/administration" routerLinkActive="active">Administration</a></li>
+        <li><a routerLink="/sign-out" routerLinkActive="active">Sign out</a></li>
       </ul>
-    </ng-container>
-    <h2>Settings</h2>
-    <ul>
-      <li><a routerLink="/profile-settings" routerLinkActive="active">Profile settings</a></li>
-      <li><a routerLink="/general-settings" routerLinkActive="active">General settings</a></li>
-      <li><a routerLink="/administration" routerLinkActive="active">Administration</a></li>
-      <li><a routerLink="/sign-out" routerLinkActive="active">Sign out</a></li>
-    </ul>
+    </div>
   </div>
-</div>
+</ng-container>

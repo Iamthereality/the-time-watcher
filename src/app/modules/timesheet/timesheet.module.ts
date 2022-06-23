@@ -7,7 +7,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { DaySelectorComponent } from './components/day-selector/day-selector.component';
 import { DailyStatisticsComponent } from './components/daily-statistics/daily-statistics.component';
 import { TimesheetRecordComponent } from './components/timesheet-record/timesheet-record.component';
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { SharedModule } from "../../shared/shared.module";
     CalendarComponent,
     DaySelectorComponent,
     DailyStatisticsComponent,
-    TimesheetRecordComponent,
+    TimesheetRecordComponent
   ],
   imports: [CommonModule, TimesheetRoutingModule, SharedModule],
   exports: [
@@ -24,7 +24,7 @@ import { SharedModule } from "../../shared/shared.module";
     DailyTimesheetComponent,
     CalendarComponent,
     DaySelectorComponent,
-    DailyStatisticsComponent,
+    DailyStatisticsComponent
   ]
 })
 export class TimesheetModule {}

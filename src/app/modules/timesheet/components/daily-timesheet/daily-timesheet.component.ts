@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDailyRecord } from "@core/interfaces/domain/daily-record/daily-record.interface";
+import { IDailyRecord } from '@core/interfaces/domain/daily-record/daily-record.interface';
 
 @Component({
   selector: 'app-daily-timesheet',
@@ -12,7 +12,7 @@ export class DailyTimesheetComponent implements OnInit {
   constructor() {
     this.dailyRecords = [];
     for (let i = 0; i < 24; i++) {
-      this.dailyRecords.push({} as IDailyRecord)
+      this.dailyRecords.push({} as IDailyRecord);
     }
   }
 

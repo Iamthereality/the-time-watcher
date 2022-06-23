@@ -33,12 +33,14 @@
     align-items: center;
     justify-content: flex-end;
 
-    .side-bar__close {
+    &-close {
       position: relative;
       cursor: pointer;
       width: 40px;
       height: 40px;
       border-radius: 50%;
+      border: none;
+      background-color: transparent;
       transition: 0.2s;
 
       .bar {
@@ -60,7 +62,7 @@
         }
       }
 
-      &:hover {
+      &:hover, &:focus-visible {
         background-color: $BACKGROUND_COLOR;
 
         &:active {

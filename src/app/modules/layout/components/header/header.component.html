@@ -1,21 +1,19 @@
 <header>
-  <div class="container">
-    <div class="menu">
-      <div class="logo" routerLink="/home">The Time Watcher</div>
-      <ng-container *ngIf="window.width > 767">
-        <ul>
-          <li><a routerLink="/timesheet" routerLinkActive="active">Timesheet</a></li>
-          <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-          <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
-        </ul>
-      </ng-container>
-    </div>
-    <div (click)="openDrawer()" class="settings">
-      <div class="burger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-    </div>
+  <div class="menu">
+    <a class="logo" routerLink="/home">{{ logo }}</a>
+    <ng-container *ngIf="(windowDimensions$ | async).width > 767">
+      <ul>
+        <li><a routerLink="/timesheet" routerLinkActive="active">Timesheet</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+        <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
+      </ul>
+    </ng-container>
   </div>
+  <button (click)="openDrawer()" class="settings">
+    <div class="burger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </button>
 </header>

@@ -1,4 +1,4 @@
-import { IWindowDimensions } from "@core/interfaces/application/window-dimensions/window-dimensions.interface";
+import { IWindowDimensions } from '@core/interfaces/application/window-dimensions/window-dimensions.interface';
 
 export interface IDailyRecord {
   elementDimensionsValue: IWindowDimensions;

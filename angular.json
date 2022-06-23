@@ -64,6 +64,21 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": ""
@@ -71,12 +86,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TheTimeWatcher:build",
+            "browserTarget": "TheTimeWatcher:build:local",
             "proxyConfig": "proxy.config.json"
           },
           "configurations": {
             "production": {
               "browserTarget": "TheTimeWatcher:build:production"
+            },
+            "local": {
+              "browserTarget": "TheTimeWatcher:build:local"
             }
           }
         },

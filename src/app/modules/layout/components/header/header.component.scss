@@ -1,7 +1,7 @@
 @import "../../../../../scss/variables";
 @import "../../../../../scss/mixins";
 
-header {
+:host {
   position: relative;
   z-index: 3;
   font-size: 1.1em;
@@ -14,7 +14,7 @@ header {
   user-select: none;
   background-color: $WHITE_COLOR;
 
-  .container {
+  header {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
@@ -25,6 +25,7 @@ header {
     height: 100%;
 
     .menu {
+      height: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -32,11 +33,12 @@ header {
 
       .logo {
         width: 285px;
-        font-size: 1.3em;
         cursor: pointer;
         text-align: center;
-        outline: none;
+        font-size: 1.3em;
         font-weight: 400;
+        color: $FONT_MAIN_COLOR;
+        text-decoration: none;
 
         @media (max-width: 425px) {
           width: inherit;
@@ -83,6 +85,8 @@ header {
       height: 40px;
       border-radius: 50%;
       transition: 0.2s;
+      background-color: transparent;
+      border: none;
 
       .burger {
         position: absolute;
@@ -103,7 +107,7 @@ header {
         }
       }
 
-      &:hover {
+      &:hover, &:focus-visible {
         background-color: $BACKGROUND_COLOR;
 
         &:active {
