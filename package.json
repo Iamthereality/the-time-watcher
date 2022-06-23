@@ -67,6 +67,6 @@
   },
   "lint-staged": {
     "src/{app,environments}/**/*{.ts,.html}": "prettier --write",
-    "src/{app,environments}/**/*.scss": "stylelint --fix"
+    "src/**/*.scss": "stylelint --fix"
   }
 }
