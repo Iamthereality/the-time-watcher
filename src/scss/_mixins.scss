@@ -17,14 +17,14 @@
   }
 
   .top, .left, .right, .bottom {
-    display: block;
-    opacity: 0;
     position: absolute;
+    display: block;
     background-color: $color;
-    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-duration: 0.3s;
     animation-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
     animation-iteration-count: 1;
-    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
   }
 
   .top, .left, {
@@ -67,7 +67,7 @@
     }
 
     100% {
-      height: $vw !important;
+      height: $vw;
     }
   }
 
@@ -77,36 +77,35 @@
     }
 
     100% {
-      width: $hw !important;
+      width: $hw;
     }
   }
 }
 
 @mixin hover-list-item($underscoreColor) {
-  cursor: pointer;
   position: relative;
   outline: none;
+  cursor: pointer;
 
   a {
     color: #000;
     text-decoration: none;
   }
 
-  &:after {
-    content: '';
-    width: 0;
+  &::after {
     position: absolute;
     bottom: -5px;
     left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $underscoreColor;
     opacity: 0;
     transition: all 0.3s;
-    background-color: $underscoreColor;
-    height: 2px;
+    content: '';
   }
 
   &:hover {
-
-    &:after {
+    &::after {
       width: 100%;
       opacity: 1;
     }
@@ -114,29 +113,30 @@
 }
 
 @mixin loading-placeholder() {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  height: 200px;
   position: relative;
+  height: 200px;
   overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 5%);
 
-  &:before {
-    content: '';
-    display: block;
+  &::before {
     position: absolute;
-    z-index: 0;
-    left: -150px;
     top: 0;
-    height: 100%;
+    left: -150px;
+    z-index: 0;
+    display: block;
     width: 150px;
+    height: 100%;
     background: linear-gradient(to right, transparent 0%, #E8E8E8 50%, transparent 100%);
     animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+    content: '';
   }
 
   @keyframes load {
     from {
       left: -150px;
     }
+
     to   {
       left: 100%;
     }

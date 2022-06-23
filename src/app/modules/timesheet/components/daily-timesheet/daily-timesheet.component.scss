@@ -2,25 +2,24 @@
 
 :host {
   display: flex;flex-direction: column;
-  padding: 20px;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
-  background-color: $WHITE_COLOR;
   margin-right: 20px;
+  padding: 20px;
   overflow-y: scroll;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: $white-color;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
   transition: all 0.2s;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 30%);
   }
 
   @media (max-width: 1200px) {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
 
   app-timesheet-record {
-
     &:not(&:last-child) {
       margin-bottom: 20px;
     }

@@ -1,6 +1,6 @@
 @import "~src/scss/variables";
 
-$border: 2px solid $GRAY_COLOR;
+$border: 2px solid $gray-color;
 
 :host {
   width: 100%;
@@ -8,27 +8,27 @@ $border: 2px solid $GRAY_COLOR;
 }
 
 .day-selector {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   position: relative;
   z-index: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   li {
-    background-color: $WHITE_COLOR;
-    border-top: $border;
-    font-size: 1.4em;
-    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    width: 100%;
     height: calc((100% - 12px) / 7);
     min-height: 23px;
-    transition: all ease-in-out 0.3s;
+    font-size: 1.4em;
+    background-color: $white-color;
+    border-top: $border;
     cursor: pointer;
+    transition: all ease-in-out 0.3s;
     user-select: none;
 
     div {
@@ -46,13 +46,13 @@ $border: 2px solid $GRAY_COLOR;
     }
 
     &:hover {
-      width: calc(100% + 20px);
       position: relative;
       z-index: 3;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      width: calc(100% + 20px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 30%);
 
       &:active {
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 30%);
       }
     }
 

@@ -1,14 +1,14 @@
 @import "~src/scss/variables";
 
 :host {
-  padding: 20px;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
-  background-color: $WHITE_COLOR;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: $white-color;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
   transition: all 0.2s;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 30%);
   }
 }
